@@ -1,8 +1,8 @@
 #include "logger.h"
 
-void printMsg(struct msg value, FILE *file, int useErrno)
+void printMsg(struct log_msg msg, FILE *file, int useErrno)
 {
-        switch(value.type) {
+        switch(msg.type) {
         case INFO:
                 //print with blue background
                 fprintf(file, "\033[44mINFO: ");
@@ -15,7 +15,7 @@ void printMsg(struct msg value, FILE *file, int useErrno)
                 break;
         }
 
-        fprintf(file, "%s", value.msg);
+        fprintf(file, "%s", msg.msg);
         if (useErrno)
                 fprintf(file, "\nFROM ERRNO: %s\033[m\n", strerror(errno));
         else

@@ -5,7 +5,7 @@
  * Error logging program that can log to stderr or
  * a logfile.
  * Uses different colors for each type when printed to
- * stderr.
+ * stderr or the file is outputed to terminal using cat.
 */
 
 #include <stdio.h>
@@ -15,19 +15,19 @@
 #define NO_ERRNO 0
 #define USE_ERRNO 1
 
-enum msgType
+enum log_msg_type
 {
         INFO,
         WARNING,
         ERROR
 };
 
-struct msg
+struct log_msg
 {
         char* msg;
-        enum msgType type;
+        enum log_msg_type type;
 };
 
 // Prints an error message to stderr or a file
-void printMsg(struct msg value, FILE *file, int useErrno);
+void printMsg(struct log_msg msg, FILE *file, int useErrno);
 #endif // ERROR_LOGGER_H

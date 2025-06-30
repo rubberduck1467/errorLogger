@@ -3,7 +3,7 @@ CC := gcc
 
 TARGET_EXE := test.out
 DEBUG_EXE := debug.out
-LIB_TARGET := logger.so
+LIB_TARGET := liblogger.so
 
 BUILD_DIR := .
 SRC_DIRS := .
@@ -36,5 +36,5 @@ $(BUILD_DIR)/$(LIB_TARGET): $(SRCS)
 
 .PHONY: clean
 clean:
-	@rm -rf *.o *.debug *.out
+	@rm -rf *.o *.debug *.out *.log lib*.so
 
