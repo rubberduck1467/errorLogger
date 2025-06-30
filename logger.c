@@ -1,6 +1,6 @@
 #include "logger.h"
 
-void printMsg(struct log_msg msg, FILE *file, int useErrno)
+void printLogMsg(struct log_msg msg, FILE *file, int useErrno)
 {
         switch(msg.type) {
         case INFO:

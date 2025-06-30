@@ -29,5 +29,5 @@ struct log_msg
 };
 
 // Prints an error message to stderr or a file
-void printMsg(struct log_msg msg, FILE *file, int useErrno);
+void printLogMsg(struct log_msg msg, FILE *file, int useErrno);
 #endif // ERROR_LOGGER_H
